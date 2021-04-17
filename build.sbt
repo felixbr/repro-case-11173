@@ -5,14 +5,14 @@ lazy val root = (project in file("."))
   .settings(
     inThisBuild(
       List(
-        scalaVersion := "3.0.0-RC1"
+        scalaVersion := "3.0.0-RC2"
       )
     ),
     name := "issue-11173-repro-case",
     version := "0.1.0",
     libraryDependencies ++= (
       List(
-        ("co.fs2" %% "fs2-core" % "3.0.0-M9").withDottyCompat(scalaVersion.value)
+        ("co.fs2" %% "fs2-core" % "3.0.1").cross(CrossVersion.for3Use2_13)
       )
     )
   )
